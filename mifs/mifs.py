@@ -311,9 +311,9 @@ class MutualInformationFeatureSelector(object):
         if not isinstance(self.categorical, bool):
             raise ValueError('Categorical must be Boolean.')
         if self.categorical and np.unique(y).shape[0] > 5:
-            print 'Are you sure y is categorical? It has more than 5 levels.'
+            print ('Are you sure y is categorical? It has more than 5 levels.')
         if not self.categorical and self._isinteger(y):
-            print 'Are you sure y is continuous? It seems to be discrete.'
+            print ('Are you sure y is continuous? It seems to be discrete.')
         if self._isinteger(X):
             print ('The values of X seem to be discrete. MI_FS will treat them'
                    'as continuous.')
@@ -338,4 +338,4 @@ class MutualInformationFeatureSelector(object):
 
         if self.verbose > 1:
             out += ', JMIM: ' + str(MIs[-1])
-        print out
+        print (out)
